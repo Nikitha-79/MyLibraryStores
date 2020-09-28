@@ -25,6 +25,16 @@
                 <span asp-validation-for="ISBN" class="text-danger" ></span>
             </div>
             <div class="form-group">
+                <label asp-for="Genre"></label>
+                <select asp-for="Genre" class="form-control">
+                    <option disabled selected>--Select--</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Romantic">Romantic</option>
+                    <option value="Comic">Comic</option>
+                    <option value="Thriller">Thriller</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label asp-for="PublishedDate"></label>
                 <input asp-for="PublishedDate" class="form-control" />
                 <span asp-validation-for="PublishedDate" class="text-danger" ></span>

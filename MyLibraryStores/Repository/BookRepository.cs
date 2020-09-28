@@ -46,6 +46,7 @@ namespace MyLibraryStores.Repository
             book1.BookName = book.BookName;
             book1.AuthorName = book.AuthorName;
             book1.ISBN = book.ISBN;
+            book1.Genre = book.Genre;
             book1.PublishedDate = book.PublishedDate;
             _dbcontext.SaveChanges();
 

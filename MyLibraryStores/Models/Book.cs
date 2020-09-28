@@ -21,6 +21,8 @@ namespace MyLibraryStores.Models
         [Required]
         public string ISBN { get; set; }
 
+        public String Genre { get; set; }
+
         [Required]
         [Display(Name ="Published Date")]
         [DataType(DataType.Date)]
