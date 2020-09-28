@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Get Details Of All Books Names</h1>
+@Html.ActionLink("Add New Book", "Create", "Books", new { @class = "btn btn-outline-info" })
+
+@if (Model != null)
+{
+    <ul>
+        @foreach (var book in Model)
+        {
+        <li class="list-group-item">
+            <a asp-action="Details" asp-route-id="@book.Id" asp-controller="Books">@book.BookName</a>          
+        </li>
+        <li class="list-group-item">
+            <form asp-controller="Books" asp-action="Delete" method="Post" asp-route-id="@book.Id">
+                <button type="submit" class="btn btn-outline-primary">Delete</button>
+             </form>
+
+        </li>
+        <li class="list-group-item">
+            <form asp-controller="Books" asp-action="Update" method="Get" asp-route-id="@book.Id">
+                <button type="submit" class="btn btn-outline-primary">Edit Book</button>
+            </form>
+        </li>
+                         
+        }
+    </ul>
+}
+else
+{
+    <h2>No Records</h2>
+}
+
